@@ -1,0 +1,203 @@
+/* Main container */
+.code-editor-container {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow: hidden; /* Prevents overall page scrolling */
+}
+
+/* Dark mode */
+.code-editor-container.dark {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Light mode */
+.code-editor-container.light {
+    background-color: #f8f8f8;
+    color: black;
+}
+
+/* Toolbar */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Dropdown */
+.language-select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Buttons */
+.button {
+    padding: 8px 12px;
+    background-color: #4a4a4a;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #6a6a6a;
+}
+
+/* Editor container */
+.editor {
+    flex-grow: 1;
+    height: 65%;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: auto; /* Makes the editor scrollable */
+    padding: 10px;
+    background-color: #282c34;
+    color: #ffffff;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #666 #333; /* Firefox */
+}
+
+/* WebKit (Chrome, Edge, Safari) scrollbar */
+.editor::-webkit-scrollbar {
+    width: 6px;
+}
+
+.editor::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 3px;
+}
+
+.editor::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* Resizer */
+.resizer {
+    height: 5px;
+    background-color: #666;
+    cursor: row-resize;
+    transition: background-color 0.2s ease;
+}
+
+.resizer:hover {
+    background-color: #888;
+}
+
+/* Output section */
+.output-section {
+    display: flex;
+    flex-grow: 1;
+    margin-top: 10px;
+    gap: 10px;
+    overflow: hidden; /* Prevents layout shift */
+}
+
+/* Input and output boxes */
+.input-box,
+.output-box {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    overflow: auto; /* Enables scrolling */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    max-height: 30vh; /* Prevents excessive height */
+    scrollbar-width: thin;
+    scrollbar-color: #666 #222;
+}
+
+/* WebKit scrollbar */
+.input-box::-webkit-scrollbar,
+.output-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.input-box::-webkit-scrollbar-thumb,
+.output-box::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 3px;
+}
+
+.input-box::-webkit-scrollbar-track,
+.output-box::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Dark mode input/output */
+.dark .input-box,
+.dark .output-box {
+    background-color: #222;
+    color: white;
+}
+
+/* Light mode input/output */
+.light .input-box,
+.light .output-box {
+    background-color: white;
+    color: black;
+}
+
+/* Textarea inside input box */
+.input-box textarea {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+    font-size: 16px;
+}
+
+/* Preformatted output */
+.output-box pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Copy buttons */
+.copy-button {
+    padding: 6px;
+    background-color: #666;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #888;
+}
+
+/* Responsive: Stack input and output vertically on small screens */
+@media (max-width: 768px) {
+    .output-section {
+        flex-direction: column;
+        max-height: none;
+    }
+}
