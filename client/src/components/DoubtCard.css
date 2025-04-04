@@ -1,188 +1,190 @@
 /* src/components/DoubtCard.css */
 
+/* Overall card styling with a subtle elevation effect */
 .doubt-card {
-    background: #ffffff;
-    border: 1px solid #d0d7de;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 4px rgba(27, 31, 35, 0.08);
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .doubt-card:hover {
-    box-shadow: 0 4px 12px rgba(27, 31, 35, 0.15);
-  }
-  
-  /* Header with avatar and created date */
-  .doubt-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  
-  .avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 12px;
-  }
-  
-  .avatar.placeholder {
-    background: #eff3f6;
-    color: #57606a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: 1px solid #d0d7de;
-  }
-  
-  .header-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .username {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #24292e;
-  }
-  
-  .created-at {
-    font-size: 0.85rem;
-    color: #57606a;
-  }
-  
-  /* Doubt content */
-  .doubt-content p {
-    font-size: 1rem;
-    color: #24292e;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  
-  /* Icon-only button styles */
-  .icon-btn {
-    background: transparent;
-    border: none;
-    color: #586069;
-    padding: 6px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  .icon-btn:hover {
-    color: #0366d6;
-  }
-  
-  .icon-btn.delete {
-    color: #d73a49;
-  }
-  
-  .icon-btn.delete:hover {
-    color: #b31d28;
-  }
-  
-  /* Grouping icon buttons */
-  .button-group {
-    margin-top: 12px;
-    display: flex;
-    gap: 8px;
-  }
-  
-  /* Toggle button (for replies or code) styling */
-  .toggle-btn,
-  .reply-toggle-btn {
-    background: transparent;
-    border: none;
-    color: #586069;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.2s ease;
-  }
-  
-  .toggle-btn:hover,
-  .reply-toggle-btn:hover {
-    color: #0366d6;
-  }
-  
-  /* Replies section */
-  .replies-section {
-    border-top: 1px solid #e1e4e8;
-    padding-top: 12px;
-    margin-top: 16px;
-  }
-  
-  .replies-section h4 {
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #24292e;
-  }
-  
-  .replies-section ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .replies-section li {
-    padding: 12px 0;
-    border-bottom: 1px solid #e1e4e8;
-  }
-  
-  .replies-section li:last-child {
-    border-bottom: none;
-  }
-  
-  .replies-section li p {
-    font-size: 0.95rem;
-    color: #24292e;
-    margin-bottom: 6px;
-  }
-  
-  .replies-section li small {
-    font-size: 0.8rem;
-    color: #586069;
-  }
-  
-  /* Textarea for editing */
-  textarea {
-    width: 100%;
-    resize: vertical;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 1rem;
-    color: #24292e;
-    font-family: inherit;
-    margin-bottom: 12px;
-    transition: border-color 0.2s ease;
-  }
-  
-  textarea:focus {
-    outline: none;
-    border-color: #0366d6;
-  }
-  
-  /* Feedback messages */
-  .error-message {
-    color: #d73a49;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-  }
-  
-  .success-message {
-    color: #28a745;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-  }
-  
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doubt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header with avatar and meta info */
+.doubt-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+  border: 2px solid #e0e0e0;
+}
+
+.avatar.placeholder {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.created-at {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Doubt content styling */
+.doubt-content p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Icon-only button styles with smooth hover transitions */
+.icon-btn {
+  background: none;
+  border: none;
+  color: #666;
+  padding: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-btn:hover {
+  color: #007bff;
+}
+
+.icon-btn.delete {
+  color: #e74c3c;
+}
+
+.icon-btn.delete:hover {
+  color: #c0392b;
+}
+
+/* Grouping icon buttons with proper spacing */
+.button-group {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Toggle and reply buttons */
+.toggle-btn,
+.reply-toggle-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover,
+.reply-toggle-btn:hover {
+  color: #007bff;
+}
+
+/* Replies section with clean separation */
+.replies-section {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+  margin-top: 24px;
+}
+
+.replies-section h4 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.replies-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.replies-section li {
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.replies-section li:last-child {
+  border-bottom: none;
+}
+
+.replies-section li p {
+  font-size: 0.98rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.replies-section li small {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Textarea for editing with focus state */
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 16px;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Feedback messages styling */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}

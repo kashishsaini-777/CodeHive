@@ -5,44 +5,53 @@
 
 .ask-input {
   width: 100%;
-  padding: 0.875rem 1rem;
-  font-size: 1rem;
-  font-family: inherit;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
+  padding: 0.875rem 1.2rem;
+  font-size: 1.05rem;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
   background-color: #f8fafc;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #1a202c;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   outline: none;
-  cursor: pointer;
+}
+
+.ask-input::placeholder {
+  color: #a0aec0;
+  opacity: 0.8;
 }
 
 .ask-input:hover {
-  border-color: #cbd5e1;
+  border-color: #a0aec0;
   background-color: #ffffff;
 }
 
 .ask-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
   background-color: #ffffff;
 }
 
-/* For dark mode support (optional) */
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .ask-input {
-    background-color: #1e293b;
-    border-color: #334155;
+    background-color: #2d3748;
+    border-color: #4a5568;
     color: #e2e8f0;
   }
   
+  .ask-input::placeholder {
+    color: #a0aec0;
+  }
+  
   .ask-input:hover {
-    background-color: #0f172a;
-    border-color: #475569;
+    background-color: #1a202c;
+    border-color: #718096;
   }
   
   .ask-input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(66,153,225,0.3);
   }
 }
