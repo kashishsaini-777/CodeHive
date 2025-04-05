@@ -1,12 +1,15 @@
 .ask-container {
-  margin-bottom: 1.5rem;
-  max-width: 100%;
+  margin: 2rem auto 1.5rem; /* Top margin adjusted here */
+  max-width: 700px;
+  width: 100%;
+  padding: 0 1rem; /* Side space on mobile */
+  box-sizing: border-box;
 }
 
 .ask-input {
   width: 100%;
-  padding: 0.875rem 1.2rem;
-  font-size: 1.05rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
   font-family: 'Poppins', sans-serif;
   border-radius: 12px;
   border: 1px solid #cbd5e0;
@@ -15,6 +18,7 @@
   transition: all 0.3s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   outline: none;
+  box-sizing: border-box;
 }
 
 .ask-input::placeholder {
@@ -40,16 +44,16 @@
     border-color: #4a5568;
     color: #e2e8f0;
   }
-  
+
   .ask-input::placeholder {
     color: #a0aec0;
   }
-  
+
   .ask-input:hover {
     background-color: #1a202c;
     border-color: #718096;
   }
-  
+
   .ask-input:focus {
     border-color: #63b3ed;
     box-shadow: 0 0 0 3px rgba(66,153,225,0.3);

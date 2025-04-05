@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">CodeVerse</div>
+      <div className="logo">CodeHive</div>
       <div className="nav-right">
         {!isLoggedIn && (
           <div className="login-link">
